@@ -12,7 +12,7 @@ command -v fio >/dev/null 2>&1 || { echo >&2 "Package 'fio' not installed. Abort
 command -v jq >/dev/null 2>&1 || { echo >&2 "Package 'jq' not installed. Aborting."; exit 1; }
 
 LOOPS=1 # How many times to run each test
-SIZE=4096 # Size of each test, multiples of 32 recommended for Q32 tests to give the most accurate results.
+SIZE=1024 # Size of each test, multiples of 32 recommended for Q32 tests to give the most accurate results.
 WRITEZERO=0 # Set whether to write zeroes or randoms to testfile (random is the default for both fio and crystaldiskmark); dd benchmarks typically only write zeroes which is why there can be a speed difference.
 
 QSIZE=$(($SIZE / 32)) # Size of Q32Seq tests
